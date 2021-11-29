@@ -1,0 +1,36 @@
+/*
+Copied from
+https://www.youtube.com/watch?v=18VLSXfsj94&t=305
+*/
+.container {
+    padding: 2rem;
+  }
+  
+  .cell{
+    background-color: #BDDAB3;
+    padding: 1rem;
+  }
+  
+  .grid{
+    display: grid;
+  /*
+  Make the middle column take 3 time space
+  */
+    grid-template-columns: 1fr 3fr 1fr 1fr;
+    grid-gap: 1rem;
+  }
+  
+  .flex {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  /*This means each cell in the flex will take as much place as possible, since there are 3 items they will take up equal place*/
+  .flex > .cell {
+    flex-grow: 1;
+  }
+  
+  /*Make the 2nd item take twice the space than the parent*/
+  .flex > .cell:nth-child(2) {
+    flex-grow: 2;
+  }
