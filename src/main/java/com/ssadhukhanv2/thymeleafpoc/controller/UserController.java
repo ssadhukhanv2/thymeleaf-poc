@@ -2,6 +2,7 @@ package com.ssadhukhanv2.thymeleafpoc.controller;
 
 import com.ssadhukhanv2.thymeleafpoc.model.User;
 import com.ssadhukhanv2.thymeleafpoc.repositories.UserRepository;
+//import com.ssadhukhanv2.thymeleafpoc.security.AppUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;
@@ -19,9 +20,23 @@ public class UserController {
 
     private final UserRepository userRepository;
 
+//    @Autowired
+//    private AppUserDetailsService appUserDetailsService;
+//
 
     public UserController(UserRepository userRepository) {
         this.userRepository = userRepository;
+    }
+
+
+    @GetMapping("/index")
+    public String indexPage(
+            @ModelAttribute(name = "loginFormUser")
+                    User loginFormUser,
+            @ModelAttribute(name = "registrationFormUser")
+                    User registrationFormUser,
+            BindingResult bindingResult, Model model) {
+        return "login-register";
     }
 
     @GetMapping("/")
@@ -45,6 +60,7 @@ public class UserController {
         if (resultForLoginFormUser.hasErrors()) {
             return "login-register";
         }
+
 
         List<User> userList = userRepository.findByUserName(loginFormUser.getUserName());
         if (null != userList && userList.size() > 0 && userList.get(0).getUserPassword().equals(loginFormUser.getUserPassword())) {

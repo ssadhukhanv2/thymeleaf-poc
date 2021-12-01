@@ -56,6 +56,28 @@
                                 <button type="submit" class="btn btn-primary" id="signin">Sign in</button>
                             </div>
                         </form>
+
+<!--                        <form action="/login" th:action="@{/login}" th:object="${loginFormUser}" method="post">
+                            <div class="form-floating">
+                                <input type="text" class="form-control my-3" id="login-userid-or-email"
+                                       placeholder="name@example.com"
+                                       th:field="*{userName}" name="username">
+                                <span th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"
+                                      class="text-danger"></span>
+                                <label for="login-userid-or-email">Username or email address</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="password" class="form-control  my-3" id="login-password"
+                                       placeholder="name@example.com"
+                                       th:field="*{userPassword}" name="password">
+                                <span th:if="${#fields.hasErrors('userPassword')}" th:errors="*{userPassword}"
+                                      class="text-danger"></span>
+                                <label for="login-password">Password</label>
+                            </div>
+                            <div class="col-auto">
+                                <button type="submit" class="btn btn-primary" id="signin">Sign in</button>
+                            </div>
+                        </form>-->
                     </div>
                 </div>
             </div>

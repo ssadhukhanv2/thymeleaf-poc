@@ -27,10 +27,10 @@ public class ThymeleafPocApplication implements CommandLineRunner {
 	@Transactional
 	@Override
 	public void run(String... args) throws Exception {
-//		User user=new User();
-//		user.setUserEmail("ssadhukhanv2.0@gmail.com");
-//		user.setUserName("ssadhukhanv2");
-//		user.setUserPassword("ssadhukhanv2");
-//		userRepository.save(user);
+		User user=new User();
+		user.setUserEmail("ssadhukhanv2.0@gmail.com");
+		user.setUserName("ssadhukhanv2");
+		user.setUserPassword("ssadhukhanv2");
+		userRepository.save(user);
 	}
 }
